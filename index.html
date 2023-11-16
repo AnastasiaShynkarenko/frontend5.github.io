@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="form-container">
+      <form id="registrationForm" onsubmit="submitForm(event)">
+        <label for="fullName">ПІБ:</label>
+        <input onblur="onBlur(this)" class="formInput" type="text" id="fullName" name="fullName" required
+          pattern="^[А-ЯІЇЄ][а-яіїє]+ [А-ЯІЇЄ]\. [А-ЯІЇЄ]\.$" placeholder="Прізвище І. Б.">
+
+        <label for="group">Група:</label>
+        <input onblur="onBlur(this)" class="formInput" type="text" id="group" name="group" required
+          pattern="^[А-ЯІЇЄ]{2}-\d{2}$" placeholder="Група">
+
+        <label for="idCard">ID-card:</label>
+        <input onblur="onBlur(this)" class="formInput" type="text" id="idCard" name="idCard" required
+          pattern="^[А-ЯІЇЄ]{2} №\d{6}$" placeholder="Номер ID картки">
+
+        <label for="birthday">Дата народження:</label>
+        <input onblur="onBlur(this)" class="formInput" type="text" id="birthday" name="birthday"
+          pattern="^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$" placeholder="dd.mm.yyyy" required>
+
+        <label for="email">Email:</label>
+        <input onblur="onBlur(this)" class="formInput" type="email" id="email" name="email" required
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Електронна пошта">
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="resultContainer" style="display: none;"></div>
+  </div>
+  <label for="currentColor">Обраний колір:</label>
+  <input type="color" id="currentColor">
+  <table id="colorfulTable"></table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
